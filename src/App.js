@@ -14,7 +14,7 @@ let soulMusicDictionary = {
     { name: "Mind Playing Tricks on Me by Gheto Boys", rating: "4.5/5" }
   ]
 };
-let songList = [];
+
 let genresList = Object.keys(soulMusicDictionary);
 export default function App() {
   const [currentgenre, setCurrentgenre] = useState("Rock");
@@ -23,7 +23,12 @@ export default function App() {
   }
   return (
     <div className="App">
-      <h1>Soul Music 🎼</h1>
+      <h1>
+        Soul Music{" "}
+        <span role="img" aria-label="Music emoji">
+          🎼
+        </span>
+      </h1>
       <div>Checkout recommendations as per genres</div>
       {genresList.map((genre) => (
         <button onClick={() => onClickHandler(genre)}>{genre}</button>
