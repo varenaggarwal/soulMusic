@@ -18,15 +18,15 @@ let songList = [];
 let genresList = Object.keys(soulMusicDictionary);
 export default function App() {
   const [currentgenre, setCurrentgenre] = useState("Rock");
-  function onClickHandler() {
-    // setCurrentgenre()
+  function onClickHandler(genre) {
+    setCurrentgenre(genre);
   }
   return (
     <div className="App">
       <h1>Soul Music 🎼</h1>
       <div>Checkout recommendations as per genres</div>
       {genresList.map((genre) => (
-        <button onClick={onClickHandler}>{genre}</button>
+        <button onClick={() => onClickHandler(genre)}>{genre}</button>
       ))}
       <hr />
       {soulMusicDictionary[currentgenre].map((song) => (
